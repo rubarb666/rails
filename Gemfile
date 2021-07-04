@@ -7,12 +7,12 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gemspec
 
 # We need a newish Rake since Active Job sets its test tasks' descriptions.
-gem "rake", ">= 11.1"
+gem "rake", ">= 12.3.3"
 
-gem "capybara", ">= 2.15"
-gem "selenium-webdriver", ">= 3.5.0", "< 3.13.0"
+gem "capybara", ">= 3.10.1"
+gem "selenium-webdriver", ">= 3.12.0", "< 3.13.0"
 
-gem "rack-cache", "~> 1.2"
+gem "rack-cache", "~> 1.8", ">= 1.8.0"
 gem "sass-rails", ">= 5.0.8"
 gem "turbolinks", "~> 5"
 gem "webpacker", ">= 4.0.0", require: ENV["SKIP_REQUIRE_WEBPACKER"] != "true"
@@ -26,14 +26,14 @@ gem "bcrypt", "~> 3.1.11", require: false
 gem "uglifier", ">= 1.3.0", require: false
 
 # Explicitly avoid 1.x that doesn't support Ruby 2.4+
-gem "json", ">= 2.0.0"
+gem "json", ">= 2.3.0"
 
 gem "rubocop", ">= 0.47", require: false
 
 group :doc do
-  gem "sdoc", "~> 1.0"
-  gem "redcarpet", "~> 3.2.3", platforms: :ruby
-  gem "w3c_validators"
+  gem "sdoc", "~> 1.0", ">= 1.0.0"
+  gem "redcarpet", "~> 3.5.1", platforms: :ruby
+  gem "w3c_validators", ">= 1.3.4"
   gem "kindlerb", "~> 1.2.0"
 end
 
@@ -48,13 +48,13 @@ gem "bootsnap", ">= 1.4.0", require: false
 
 # Active Job
 group :job do
-  gem "resque", require: false
-  gem "resque-scheduler", require: false
-  gem "sidekiq", require: false
+  gem "resque", ">= 1.27.4", require: false
+  gem "resque-scheduler", ">= 4.3.1", require: false
+  gem "sidekiq", ">= 5.2.3", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", github: "QueueClassic/queue_classic", require: false, platforms: :ruby
-  gem "sneakers", require: false
+  gem "sneakers", ">= 2.11.0", require: false
   gem "que", require: false
   gem "backburner", require: false
   gem "delayed_job_active_record", require: false
@@ -63,7 +63,7 @@ end
 
 # Action Cable
 group :cable do
-  gem "puma", require: false
+  gem "puma", ">= 4.3.8", require: false
 
   gem "hiredis", require: false
   gem "redis", "~> 4.0", require: false
@@ -72,8 +72,8 @@ group :cable do
 
   gem "websocket-client-simple", github: "matthewd/websocket-client-simple", branch: "close-race", require: false
 
-  gem "blade", require: false, platforms: [:ruby]
-  gem "blade-sauce_labs_plugin", require: false, platforms: [:ruby]
+  gem "blade", ">= 0.7.1", require: false, platforms: [:ruby]
+  gem "blade-sauce_labs_plugin", ">= 0.7.3", require: false, platforms: [:ruby]
   gem "sprockets-export", require: false
 end
 
@@ -83,7 +83,7 @@ group :storage do
   gem "google-cloud-storage", "~> 1.11", require: false
   gem "azure-storage", require: false
 
-  gem "image_processing", "~> 1.2"
+  gem "image_processing", "~> 1.7", ">= 1.7.1"
 end
 
 # Action Mailbox
@@ -91,8 +91,8 @@ gem "aws-sdk-sns", require: false
 gem "webmock"
 
 group :ujs do
-  gem "qunit-selenium"
-  gem "chromedriver-helper"
+  gem "qunit-selenium", ">= 0.0.4"
+  gem "chromedriver-helper", ">= 2.1.0"
 end
 
 # Add your own local bundler stuff.
@@ -112,7 +112,7 @@ group :test do
 end
 
 platforms :ruby, :mswin, :mswin64, :mingw, :x64_mingw do
-  gem "nokogiri", ">= 1.8.1"
+  gem "nokogiri", ">= 1.11.4"
 
   # Needed for compiling the ActionDispatch::Journey parser.
   gem "racc", ">=1.4.6", require: false
