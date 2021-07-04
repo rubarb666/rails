@@ -12,7 +12,9 @@
   "scripts": {
     "build": "bundle exec blade build",
     "test": "echo \"See the README: https://github.com/rails/rails/blob/master/actionview/app/assets/javascripts#how-to-run-tests\" && exit 1",
-    "lint": "coffeelint app/assets/javascripts && eslint test/ujs/public/test"
+    "lint": "coffeelint app/assets/javascripts && eslint test/ujs/public/test",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -32,5 +34,9 @@
   "devDependencies": {
     "coffeelint": "^2.1.0",
     "eslint": "^2.13.1"
+  },
+  "snyk": true,
+  "dependencies": {
+    "snyk": "^1.316.1"
   }
 }
