@@ -18,7 +18,8 @@
   "author": "Javan Makhmali <javan@javan.us>",
   "license": "MIT",
   "dependencies": {
-    "spark-md5": "^3.0.0"
+    "spark-md5": "^3.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",
@@ -36,6 +37,9 @@
     "prebuild": "yarn lint",
     "build": "rollup --config rollup.config.js",
     "lint": "eslint app/javascript",
-    "prepublishOnly": "rm -rf src && cp -R app/javascript/activestorage src"
-  }
+    "prepublishOnly": "rm -rf src && cp -R app/javascript/activestorage src",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
