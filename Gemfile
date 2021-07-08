@@ -80,7 +80,7 @@ end
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.11", require: false
+  gem "google-cloud-storage", "~> 1.15", ">= 1.15.0", require: false
   gem "azure-storage", require: false
 
   gem "image_processing", "~> 1.7", ">= 1.7.1"
@@ -88,7 +88,7 @@ end
 
 # Action Mailbox
 gem "aws-sdk-sns", require: false
-gem "webmock"
+gem "webmock", ">= 3.4.2"
 
 group :ujs do
   gem "qunit-selenium", ">= 0.0.4"
