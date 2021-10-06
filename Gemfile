@@ -50,7 +50,7 @@ gem "bootsnap", ">= 1.4.0", require: false
 group :job do
   gem "resque", ">= 1.27.4", require: false
   gem "resque-scheduler", ">= 4.3.1", require: false
-  gem "sidekiq", ">= 5.2.3", require: false
+  gem "sidekiq", ">= 6.2.1", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", github: "QueueClassic/queue_classic", require: false, platforms: :ruby
@@ -80,7 +80,7 @@ end
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.11", require: false
+  gem "google-cloud-storage", "~> 1.15", ">= 1.15.0", require: false
   gem "azure-storage", require: false
 
   gem "image_processing", "~> 1.7", ">= 1.7.1"
@@ -88,7 +88,7 @@ end
 
 # Action Mailbox
 gem "aws-sdk-sns", require: false
-gem "webmock"
+gem "webmock", ">= 3.4.2"
 
 group :ujs do
   gem "qunit-selenium", ">= 0.0.4"
@@ -112,7 +112,7 @@ group :test do
 end
 
 platforms :ruby, :mswin, :mswin64, :mingw, :x64_mingw do
-  gem "nokogiri", ">= 1.11.4"
+  gem "nokogiri", ">= 1.12.5"
 
   # Needed for compiling the ActionDispatch::Journey parser.
   gem "racc", ">=1.4.6", require: false
