@@ -50,7 +50,7 @@ gem "bootsnap", ">= 1.4.0", require: false
 group :job do
   gem "resque", ">= 1.27.4", require: false
   gem "resque-scheduler", ">= 4.3.1", require: false
-  gem "sidekiq", ">= 5.2.3", require: false
+  gem "sidekiq", ">= 6.4.0", require: false
   gem "sucker_punch", require: false
   gem "delayed_job", require: false
   gem "queue_classic", github: "QueueClassic/queue_classic", require: false, platforms: :ruby
