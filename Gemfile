@@ -83,7 +83,7 @@ group :storage do
   gem "google-cloud-storage", "~> 1.11", require: false
   gem "azure-storage", require: false
 
-  gem "image_processing", "~> 1.7", ">= 1.7.1"
+  gem "image_processing", "~> 1.12", ">= 1.12.2"
 end
 
 # Action Mailbox
