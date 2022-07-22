@@ -52,12 +52,12 @@ group :job do
   gem "resque-scheduler", ">= 4.3.1", require: false
   gem "sidekiq", ">= 5.2.3", require: false
   gem "sucker_punch", require: false
-  gem "delayed_job", require: false
+  gem "delayed_job", ">= 4.1.8", require: false
   gem "queue_classic", github: "QueueClassic/queue_classic", require: false, platforms: :ruby
   gem "sneakers", ">= 2.11.0", require: false
   gem "que", require: false
   gem "backburner", require: false
-  gem "delayed_job_active_record", require: false
+  gem "delayed_job_active_record", ">= 4.1.4", require: false
   gem "sequel", require: false
 end
 
@@ -128,16 +128,16 @@ end
 
 platforms :jruby do
   if ENV["AR_JDBC"]
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 60.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-      gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcmysql-adapter", ">= 60.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 60.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     end
   else
-    gem "activerecord-jdbcsqlite3-adapter", ">= 1.3.0"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 60.0"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", ">= 1.3.0"
-      gem "activerecord-jdbcpostgresql-adapter", ">= 1.3.0"
+      gem "activerecord-jdbcmysql-adapter", ">= 60.0"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 60.0"
     end
   end
 end
