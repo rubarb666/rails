@@ -13,7 +13,7 @@ gem "capybara", ">= 3.10.1"
 gem "selenium-webdriver", ">= 3.12.0", "< 3.13.0"
 
 gem "rack-cache", "~> 1.8", ">= 1.8.0"
-gem "sass-rails", ">= 5.0.8"
+gem "sass-rails", ">= 6.0.0"
 gem "turbolinks", "~> 5"
 gem "webpacker", ">= 4.0.0", require: ENV["SKIP_REQUIRE_WEBPACKER"] != "true"
 # require: false so bcrypt is loaded only when has_secure_password is used.
@@ -38,7 +38,7 @@ group :doc do
 end
 
 # Active Support
-gem "dalli"
+gem "dalli", ">= 3.2.3"
 gem "listen", ">= 3.0.5", "< 3.2", require: false
 gem "libxml-ruby", platforms: :ruby
 gem "connection_pool", require: false
@@ -50,20 +50,20 @@ gem "bootsnap", ">= 1.4.0", require: false
 group :job do
   gem "resque", ">= 1.27.4", require: false
   gem "resque-scheduler", ">= 4.3.1", require: false
-  gem "sidekiq", ">= 5.2.3", require: false
+  gem "sidekiq", ">= 6.2.1", require: false
   gem "sucker_punch", require: false
-  gem "delayed_job", require: false
+  gem "delayed_job", ">= 4.1.9", require: false
   gem "queue_classic", github: "QueueClassic/queue_classic", require: false, platforms: :ruby
   gem "sneakers", ">= 2.11.0", require: false
   gem "que", require: false
   gem "backburner", require: false
-  gem "delayed_job_active_record", require: false
+  gem "delayed_job_active_record", ">= 4.1.5", require: false
   gem "sequel", require: false
 end
 
 # Action Cable
 group :cable do
-  gem "puma", ">= 4.3.8", require: false
+  gem "puma", ">= 4.3.12", require: false
 
   gem "hiredis", require: false
   gem "redis", "~> 4.0", require: false
@@ -80,10 +80,10 @@ end
 # Active Storage
 group :storage do
   gem "aws-sdk-s3", require: false
-  gem "google-cloud-storage", "~> 1.11", require: false
+  gem "google-cloud-storage", "~> 1.15", ">= 1.15.0", require: false
   gem "azure-storage", require: false
 
-  gem "image_processing", "~> 1.7", ">= 1.7.1"
+  gem "image_processing", "~> 1.12", ">= 1.12.2"
 end
 
 # Action Mailbox
@@ -112,7 +112,7 @@ group :test do
 end
 
 platforms :ruby, :mswin, :mswin64, :mingw, :x64_mingw do
-  gem "nokogiri", ">= 1.11.4"
+  gem "nokogiri", ">= 1.13.9"
 
   # Needed for compiling the ActionDispatch::Journey parser.
   gem "racc", ">=1.4.6", require: false
@@ -128,16 +128,16 @@ end
 
 platforms :jruby do
   if ENV["AR_JDBC"]
-    gem "activerecord-jdbcsqlite3-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
-      gem "activerecord-jdbcpostgresql-adapter", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcmysql-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 61.0", github: "jruby/activerecord-jdbc-adapter", branch: "master"
     end
   else
-    gem "activerecord-jdbcsqlite3-adapter", ">= 1.3.0"
+    gem "activerecord-jdbcsqlite3-adapter", ">= 61.0"
     group :db do
-      gem "activerecord-jdbcmysql-adapter", ">= 1.3.0"
-      gem "activerecord-jdbcpostgresql-adapter", ">= 1.3.0"
+      gem "activerecord-jdbcmysql-adapter", ">= 61.0"
+      gem "activerecord-jdbcpostgresql-adapter", ">= 61.0"
     end
   end
 end
