@@ -13,7 +13,7 @@ gem "capybara", ">= 3.10.1"
 gem "selenium-webdriver", ">= 3.12.0", "< 3.13.0"
 
 gem "rack-cache", "~> 1.8", ">= 1.8.0"
-gem "sass-rails", ">= 5.0.8"
+gem "sass-rails", ">= 6.0.0"
 gem "turbolinks", "~> 5"
 gem "webpacker", ">= 4.0.0", require: ENV["SKIP_REQUIRE_WEBPACKER"] != "true"
 # require: false so bcrypt is loaded only when has_secure_password is used.
@@ -63,7 +63,7 @@ end
 
 # Action Cable
 group :cable do
-  gem "puma", ">= 4.3.8", require: false
+  gem "puma", ">= 3.12.6", require: false
 
   gem "hiredis", require: false
   gem "redis", "~> 4.0", require: false
@@ -83,7 +83,7 @@ group :storage do
   gem "google-cloud-storage", "~> 1.11", require: false
   gem "azure-storage", require: false
 
-  gem "image_processing", "~> 1.7", ">= 1.7.1"
+  gem "image_processing", "~> 1.12", ">= 1.12.2"
 end
 
 # Action Mailbox
